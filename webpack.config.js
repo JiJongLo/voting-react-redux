@@ -22,7 +22,8 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
