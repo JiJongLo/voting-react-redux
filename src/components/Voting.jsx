@@ -1,19 +1,23 @@
-/**
- * Created by Dr_Shu on 04.10.2015.
- */
+
 import React from 'react';
 
 export default React.createClass({
-    getPair : function(){
+    getPair (){
         return this.props.pair || [];
     },
-    render: function(){
+    isDisabled () {
+        return !!this.props.hasVoted;
+    },
+    hasVoteFor (entry) {
+        return this.props.hasVoted === entry;
+    },
+    render () {
         return <div className="voting">
-            {this.getPair().map(entry =>
-                <button key = {entry}>
-                    <h1>{entry}</h1>
-                </button>
-            )}
+            {
+            this.props.winner ?
+              <Winner ref = "winner" winner={this.props.winner} /> :
+                <Vote {...this.props} />
+            }
             </div>;
     }
 })
