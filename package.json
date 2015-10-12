@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive test/**/*.jsx",
     "test:watch": "npm run test -- --watch",
-    "start:dev" : "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors"
   },
   "author": "",
   "license": "ISC",
