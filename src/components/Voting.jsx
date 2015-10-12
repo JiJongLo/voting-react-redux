@@ -1,10 +1,13 @@
 
 import React from 'react';
-
+import Winner from  './Winner';
+import Vote from  './Vote';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 export default React.createClass({
     getPair (){
         return this.props.pair || [];
     },
+    mixins: [PureRenderMixin],
     isDisabled () {
         return !!this.props.hasVoted;
     },
