@@ -33,6 +33,7 @@ describe('Voting', () => {
             expect(firstButton.textContent).to.equal("Trainspotting");
             const newPair = pair.set(0, 'Sunshine');
             component.setProps({pair: newPair});
+            firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
             expect(firstButton.textContent).to.equal("Sunshine");
         }
     );
