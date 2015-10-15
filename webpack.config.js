@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-debugger;
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
@@ -12,11 +11,17 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [{
+        loaders: [
+            {
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'react-hot!babel'
-        }]
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css!autoprefixer?browsers=last 2 versions'
+            }
+        ]
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
